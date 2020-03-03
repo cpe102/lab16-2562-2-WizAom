@@ -4,9 +4,27 @@
 #include<vector>
 using namespace std;
 
-vector<int> randomVector(int);
-void showVector(vector<int>);
-int dotProduct(vector<int>,vector<int>);
+vector<int> randomVector(int N){
+	vector<int> a(N);
+    for(int i=0;i<N;i++){
+        a[i]=rand()%9;
+    }
+	return a;
+}
+void showVector(vector<int> a){
+	cout << "[";
+	for(int i=0;i<a.size();i++){
+		cout << a[i] << " ";
+	}
+	cout << "]";
+}
+int dotProduct(vector<int> a,vector<int> b){
+	int x;
+    for(int i=0;i<a.size();i++){
+		x+=a[i]*b[i];
+	}
+	return x;
+}
 
 int main(){
 	srand(time(0));
